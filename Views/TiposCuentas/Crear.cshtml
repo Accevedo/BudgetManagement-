@@ -1,0 +1,53 @@
+﻿@model TipoCUenta;
+
+@{
+    ViewData["Title"] = "Crear Cuenta";
+}
+
+@*Formulario de creacion de cuentas*@
+
+<h1>Crear tipo de cuenta</h1>
+<h5>
+
+    El tipo de cuneta se refiere a como podemos agrupar cuentas
+    Ejemplo: Prestamos, Tarjeta de Credito, et...
+
+</h5>
+
+<div asp-validation-summary="ModelOnly" class=" text-danger"></div>
+
+<form asp-controller="TiposCuentas" asp-action="Crear">
+    <div class="mb-3">
+        <label asp-for="Nombre" class="form-label"></label>
+        <input type="text" class="form-control" asp-for="Nombre" aria-describedby="userName">
+        <div id="NombreUsuario" class="form-text">Please your name here.</div>
+        <span asp-validation-for="Nombre" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="edad" class="form-label"></label>
+        <input type="text" class="form-control" asp-for="edad" aria-describedby="userName">
+        <div class="form-text"></div>
+        <span asp-validation-for="edad" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label"></label>
+        <input type="text" class="form-control" asp-for="Email" aria-describedby="userName">
+        <div  class="form-text"></div>
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="TarjetaDeCredito" class="form-label"></label>
+        <input type="text" class="form-control" asp-for="TarjetaDeCredito" aria-describedby="userName">
+        <span asp-validation-for="TarjetaDeCredito" class="text-danger"></span>
+        <div class="form-text"></div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+        @section scripts{
+               <partial name="_ValidationScriptsPartial" />
+        }
